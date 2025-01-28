@@ -1,1 +1,2 @@
 Hi , this contains of commit A
+COMMIT c
