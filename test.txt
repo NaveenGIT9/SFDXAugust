@@ -1,0 +1,2 @@
+This has commit B
+adding few changes to same commit via rebase
