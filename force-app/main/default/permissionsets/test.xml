@@ -117,7 +117,6 @@
            <name>Back_Promotion_Complete</name>
            <conditionLogic>and</conditionLogic>
            <conditions>
-               <leftValueReference>completedBackPromotions.Count</leftValueReference>
                <operator>GreaterThanOrEqualTo</operator>
                <rightValueReference>pipelineConnections.Count</rightValueReference>
            </conditions>
