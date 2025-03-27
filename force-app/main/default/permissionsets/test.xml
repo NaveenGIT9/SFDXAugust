@@ -168,12 +168,6 @@
            </value>
        </inputAssignments>
        <inputAssignments>
-           <field>Subject</field>
-           <value>
-               <stringValue>Failed to update User Story exclusion flags</stringValue>
-           </value>
-       </inputAssignments>
-       <inputAssignments>
            <field>Description</field>
            <value>
                <stringValue>Error occurred while processing User Story: {!$Record.copado__User_Story__c}</stringValue>
