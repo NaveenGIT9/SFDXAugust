@@ -32,7 +32,6 @@
            </value>
        </filters>
        <filters>
-           <field>copado__User_Story__r.Exclusion_Flags_Updated__c</field>
            <operator>EqualTo</operator>
            <value>
                <booleanValue>false</booleanValue>
