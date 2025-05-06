@@ -1,0 +1,30 @@
+#!/bin/bash 
+set -euo pipefail 
+export SHELLOPTS  
+trap 'echo "##### there was an error with exit code $? on line $LINENO ${branch:-}"' ERR 
+sourceBranch="$1" 
+branchnameupdate="-archive" 
+updatedbranchname="$sourceBranch$branchnameupdate" 
+echo "$updatedbranchname" 
+SOURCE_BRANCH_PATH="/tmp/sourceBranch" 
+git checkout -f "$sourceBranch" 
+#get the head revision of the branch 
+echo 'source branch Head revision of source branch :- '  
+headrev=$(git rev-parse HEAD) 
+echo "$headrev" 
+git checkout -f main 
+#get the head revision of the branch 
+#echo 'Head revision of Master branch :- '  
+#git rev-parse HEAD 
+git checkout -f "$sourceBranch" 
+sourcerev=$(git merge-base "$sourceBranch" main) 
+echo "common base between master head and current brnach---> $sourcerev" 
+git branch -m "$updatedbranchname" 
+git push origin HEAD:"$updatedbranchname" 
+#git remote show origin 
+git checkout -f main 
+git checkout -b "$sourceBranch" 
+git cherry-pick -X theirs $sourcerev..$headrev 
+git push origin -f HEAD:"$sourceBranch" 
+git status 
+git status 2
