@@ -27,4 +27,4 @@ git checkout -b "$sourceBranch"
 git cherry-pick -X theirs $sourcerev..$headrev 
 git push origin -f HEAD:"$sourceBranch" 
 git status 
-git status 2
+git status 23
